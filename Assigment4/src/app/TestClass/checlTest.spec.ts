@@ -51,7 +51,7 @@ describe('Utility Testing : Character ', () => {
         let inputString = 10 ;
 
         // Act
-        let result = checkTestCase.multi(inputString);
+        let result = mockcheckTestCase.multi(inputString);
 
         // Assert
         expect(result).toEqual(50);
@@ -63,7 +63,7 @@ describe('Utility Testing : Character ', () => {
         let inputString = 10 ;
 
         // Act
-        let result = checkTestCase.div(inputString);
+        let result = mockcheckTestCase.div(inputString);
 
         // Assert
         expect(result).toEqual(2);
@@ -74,7 +74,7 @@ describe('Utility Testing : Character ', () => {
         let inputString = 10 ;
 
         // Act
-        let result = checkTestCase.sqr(inputString);
+        let result = mockcheckTestCase.sqr(inputString);
 
         // Assert
         expect(result).toEqual(100);
