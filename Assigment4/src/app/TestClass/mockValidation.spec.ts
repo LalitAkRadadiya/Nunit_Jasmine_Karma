@@ -45,7 +45,7 @@ describe('Utility Testing : Validation ', () => {
         let inputString = "Gateway group of company";
 
        
-        // spy = spyOn(CheckValidation, 'endsWithcheck').and.returnValue(true);
+        spy = spyOn(CheckValidation, 'endsWithcheck').and.returnValue(true);
         let result=CheckValidation.endsWithcheck(inputString);
 
        

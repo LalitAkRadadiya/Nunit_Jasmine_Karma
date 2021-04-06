@@ -1,6 +1,5 @@
 import { checkTest } from "./checkTest";
 import { MockCase } from "./mockCase";
-import { invoke } from 'q';
 
 describe('Utility Testing : Character ', () => {
 
@@ -28,7 +27,7 @@ describe('Utility Testing : Character ', () => {
         let result = checkTestCase.add(inputString);
 
         // Assert
-        expect(result).toEqual(mockcheckTestCase.add(inputString));
+        expect(result).toEqual(15);
     });
 
 
@@ -40,9 +39,9 @@ describe('Utility Testing : Character ', () => {
 
         // Act
         let result = checkTestCase.sub(inputString);
-
+        
         // Assert
-        expect(result).toEqual(mockcheckTestCase.sub(inputString));
+        expect(result).toEqual(5);
     });
 
       
@@ -55,7 +54,7 @@ describe('Utility Testing : Character ', () => {
         let result = checkTestCase.multi(inputString);
 
         // Assert
-        expect(result).toEqual(mockcheckTestCase.multi(inputString));
+        expect(result).toEqual(50);
     });
  
     it('divide by 5 ',()=>{
@@ -67,7 +66,7 @@ describe('Utility Testing : Character ', () => {
         let result = checkTestCase.div(inputString);
 
         // Assert
-        expect(result).toEqual(mockcheckTestCase.div(inputString));
+        expect(result).toEqual(2);
     });
     it('squre',()=>{
 
@@ -78,7 +77,7 @@ describe('Utility Testing : Character ', () => {
         let result = checkTestCase.sqr(inputString);
 
         // Assert
-        expect(result).toEqual(mockcheckTestCase.sqr(inputString));
+        expect(result).toEqual(100);
     });
    
 });
