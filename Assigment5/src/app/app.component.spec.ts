@@ -56,7 +56,7 @@ describe('AppComponent', () => {
   it('should be created component', () => {
     expect(component).toBeTruthy();
   });
-  it('check if varibale is positive in', () => {
+  it('is positive', () => {
     check= spyOn(service, 'ispositive').and.returnValue(false);
     expect(component.isAlreadyPositive()).toBeFalsy();
     expect(service.ispositive).toHaveBeenCalled();
