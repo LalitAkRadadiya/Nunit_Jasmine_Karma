@@ -14,22 +14,22 @@ export class SharedService {
   update =  {id:2,userId:1,title:"ram",body:"raja"}
 
   
-  async getPosts(): Promise<Observable<any>>{
+  async getDatas(): Promise<Observable<any>>{
     return this.httpcliet.get(`https://jsonplaceholder.typicode.com/posts`);
   }
 
-  async getPost(id:number): Promise<Observable<any>> {
+  async getData(id:number): Promise<Observable<any>> {
     return this.httpcliet.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 
-  async addPost(): Promise<Observable<any>> {
+  async addData(): Promise<Observable<any>> {
    return this.httpcliet.post(`https://jsonplaceholder.typicode.com/posts`,this.add);
   }
 
-  async updatePost(): Promise<Observable<any>>{
+  async updateData(): Promise<Observable<any>>{
     return this.httpcliet.put(`https://jsonplaceholder.typicode.com/posts/2`,this.update);
   }
-  async deletePost(id:number): Promise<Observable<any>>{
+  async deleteData(id:number): Promise<Observable<any>>{
     return this.httpcliet.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 }

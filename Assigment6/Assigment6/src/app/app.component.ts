@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductService } from './SharedService/product.service';
-import { Product } from './SharedService/productModel'
+import { StudentService } from './SharedService/Student.service';
+import { Student } from './SharedService/StudentModel'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,21 +8,21 @@ import { Product } from './SharedService/productModel'
 })
 export class AppComponent {
   title = 'Assigment6';
-  constructor(private service:ProductService){}
+  constructor(private service:StudentService){}
 
-  async GetAllProducts():Promise<Product[]>{
-    return await this.service.getProducts();
+  async GetAllStudents():Promise<Student[]>{
+    return await this.service.getStudents();
   }
-  async GetSingleProduct(id:number):Promise<Product>{
-    return await this.service.getProduct(id);
+  async GetStudentbyId(id:number):Promise<Student>{
+    return await this.service.getStudent(id);
   }
-  async AddProduct(model:Product):Promise<Product[]>{
-    return await this.service.createProduct({id:5,category:"electrinics",productName:"Mouse",price:1200});
+  async AddStudent(model:Student):Promise<Student[]>{
+    return await this.service.createStudent({id:5,department:"IT",studentName:"Lalit",rollNo:1});
   }
-  async UpdateProduct(model:Product):Promise<Product[]>{
-    return await this.service.updateProduct({id:3,category:"electrinics",productName:"Smart Pen",price:1000})
+  async EditStudent(model:Student):Promise<Student[]>{
+    return await this.service.updateStudent({id:3,department:"CP",studentName:"Shayam",rollNo:2})
   }
-  async RemoveProduct(id:number):Promise<Product[]>{
-    return await this.service.deleteProduct(id);
+  async DeleteStudent(id:number):Promise<Student[]>{
+    return await this.service.deleteStudent(id);
   }
 }

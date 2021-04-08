@@ -1,29 +1,29 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ProductService } from './SharedService/product.service';
+import { StudentService } from './SharedService/student.service';
 
 describe('AppComponent', () => {
 
-  let component: AppComponent;
-  let service: ProductService;
+  let appComponent: AppComponent;
+  let service: StudentService;
 
   beforeEach(() => {
-    service = new ProductService();
-    component = new AppComponent(service);
+    service = new StudentService();
+    appComponent = new AppComponent(service);
   });
   afterEach(() => {
     service = null;
-    component = null;
+    appComponent = null;
   });
 
-  it('should call GetAllProducts()', (done) => {
+  it('should call GetAllStudents()', (done) => {
 
     //Arrange
     let record: number = 4;
 
     // Act
-    component.GetAllProducts().then((data) => {
+    appComponent.GetAllStudents().then((data) => {
 
       // Assert
       expect(data.length).toEqual(record);
@@ -31,10 +31,10 @@ describe('AppComponent', () => {
     });
   });
 
-  it('should call GetSingleProduct(2)', (done) => {
+  it('should call GetStudentById(2)', (done) => {
 
     // Act
-    component.GetSingleProduct(2).then((data) => {
+    appComponent.GetStudentbyId(2).then((data) => {
 
       // Assert
       expect(data).toBeTruthy();
@@ -43,13 +43,13 @@ describe('AppComponent', () => {
 
   });
 
-  it('should call AddProduct() with data', (done) => {
+  it('should call AddStudent() with data', (done) => {
     
     //Arrange
     let record: number = 5;
 
     // Act
-    component.AddProduct({id:20,category:"sports",price:3000,productName:"Watch"}).then((data) => {
+    appComponent.AddStudent({id:20,department:"IT",rollNo:2,studentName:"Lalit"}).then((data) => {
 
       // Assert
       expect(data.length).toEqual(record);
@@ -58,13 +58,13 @@ describe('AppComponent', () => {
 
   });
 
-  it('should call updateProduct() with data', (done) => {
+  it('should call EditStudent() with data', (done) => {
     
     //Arrange
     let record: number = 4;
 
     // Act
-    component.UpdateProduct({id:2,category:"sports",price:3000,productName:"Watch"}).then((data) => {
+    appComponent.EditStudent({id:2,department:"CIVIL",rollNo:4,studentName:"Lakhan"}).then((data) => {
 
       // Assert
       expect(data.length).toEqual(record);
@@ -73,13 +73,13 @@ describe('AppComponent', () => {
 
   });
   
-  it('should call updateProduct() with data', (done) => {
+  it('should call DeleteStudent() with data', (done) => {
     
     //Arrange
     let record: number = 3;
 
     // Act
-    component.RemoveProduct(2).then((data) => {
+    appComponent.DeleteStudent(2).then((data) => {
 
       // Assert
       expect(data.length).toEqual(record);
